@@ -1,0 +1,82 @@
+
+FUNCTION Main_copy GLOBAL
+    CALL Variaveis_Iniciais
+    @@statistics_Image: '1'
+@@statistics_TextBlock: '1'
+@@statistics_Input_Text: '7'
+@@statistics_Action_Submit: '1'
+Display.ShowCustomDialog CardTemplateJson: '''{
+          \"type\": \"AdaptiveCard\",
+          \"version\": \"1.4\",
+          \"id\": \"AdaptiveCard\",
+          \"body\": [
+            {
+              \"id\": \"Image\",
+              \"type\": \"Image\",
+              \"url\": \"${Image_Url}\"
+            },
+            {
+              \"type\": \"TextBlock\",
+              \"id\": \"cabecalho\",
+              \"weight\": \"bolder\",
+              \"text\": \"${cabecalho_Text}\",
+              \"horizontalAlignment\": \"center\",
+              \"fontType\": \"monospace\"
+            },
+            {
+              \"type\": \"Input.Text\",
+              \"id\": \"estadoUF\",
+              \"value\": \"${estadoUF_Value}\",
+              \"label\": \"${estadoUF_Label}\"
+            },
+            {
+              \"type\": \"Input.Text\",
+              \"id\": \"municipio1\",
+              \"value\": \"${municipio1_Value}\",
+              \"label\": \"${municipio1_Label}\"
+            },
+            {
+              \"type\": \"Input.Text\",
+              \"id\": \"municipio2\",
+              \"value\": \"${municipio2_Value}\",
+              \"label\": \"${municipio2_Label}\"
+            },
+            {
+              \"type\": \"Input.Text\",
+              \"id\": \"municipio3\",
+              \"value\": \"${municipio3_Value}\",
+              \"label\": \"${municipio3_Label}\"
+            },
+            {
+              \"type\": \"Input.Text\",
+              \"id\": \"municipio4\",
+              \"value\": \"${municipio4_Value}\",
+              \"label\": \"${municipio4_Label}\"
+            },
+            {
+              \"type\": \"Input.Text\",
+              \"id\": \"municipio5\",
+              \"value\": \"${municipio5_Value}\",
+              \"label\": \"${municipio5_Label}\"
+            },
+            {
+              \"type\": \"Input.Text\",
+              \"id\": \"programa\",
+              \"value\": \"${programa_Value}\",
+              \"label\": \"${programa_Label}\"
+            }
+          ],
+          \"actions\": [
+            {
+              \"type\": \"Action.Submit\",
+              \"id\": \"Submit\",
+              \"title\": \"${Submit_Title}\"
+            }
+          ]
+        }''' CustomFormData=> EntradasFormulario ButtonPressed=> ButtonPressed @Image_Url: $'''https://user-images.githubusercontent.com/57602117/271852824-a2ea4b3f-2e7b-4251-bbfe-7094edd5886d.png''' @cabecalho_Text: $'''Extrator de Dados SISMOB Portal Cidadão''' @estadoUF_Label: $'''UF''' @estadoUF_Value: estadoUF @municipio1_Label: $'''Município 01''' @municipio1_Value: municipio1 @municipio2_Label: $'''Município 02''' @municipio2_Value: municipio2 @municipio3_Label: $'''Município 03''' @municipio3_Value: municipio3 @municipio4_Label: $'''Município 04''' @municipio4_Value: municipio4 @municipio5_Label: $'''Município 05''' @municipio5_Value: municipio5 @programa_Label: $'''Programa''' @programa_Value: programa @Submit_Title: $'''Ok'''
+    WebAutomation.LaunchEdge.LaunchEdge Url: $'''https://sismobcidadao.saude.gov.br''' WindowState: WebAutomation.BrowserWindowState.Normal ClearCache: False ClearCookies: False WaitForPageToLoadTimeout: 60 Timeout: 60 BrowserInstance=> Browser
+    CALL Manipulador_de_Acoes
+    WebAutomation.CloseWebBrowser BrowserInstance: Browser
+    CALL Manipulador_de_Acoes
+    CALL Manipulador_de_Acoes
+END FUNCTION

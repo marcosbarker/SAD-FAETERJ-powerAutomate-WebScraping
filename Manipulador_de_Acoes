@@ -1,0 +1,13 @@
+
+FUNCTION Manipulador_de_Acoes GLOBAL
+    IF IsEmpty(ArquivoExcel) THEN
+        IF IsEmpty(planilha5) THEN
+            CALL Coletor_de_Dados
+        ELSE
+            Excel.LaunchExcel.LaunchUnderExistingProcess Visible: True Instance=> ArquivoExcel
+            CALL 'Inscritor/Formatador_de_Dados'
+        END
+    ELSE
+        Excel.CloseExcel.CloseAndSaveAs Instance: ArquivoExcel DocumentFormat: Excel.ExcelFormat.FromExtension DocumentPath: $'''C:\\Users\\MarcosPauloMarquesCo\\Desktop\\SAD_WebScraping-%dataColetaDosDadosFormatada%'''
+    END
+END FUNCTION

@@ -1,0 +1,42 @@
+
+FUNCTION 'Inscritor/Formatador_de_Dados' GLOBAL
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''statusObra''' Column: $'''a''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''estabelecimento''' Column: $'''b''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''tipo''' Column: $'''c''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''programa''' Column: $'''d''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''cidadeEstado''' Column: $'''e''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''bairro''' Column: $'''f''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: planilha1 Column: $'''a''' Row: 2
+    Excel.ResizeColumnsOrRows.AutofitAllColumns Instance: ArquivoExcel
+    Excel.RenameWorksheet.RenameWorksheetWithName Instance: ArquivoExcel Name: $'''Planilha1''' NewName: municipio1
+    Excel.AddWorksheet Instance: ArquivoExcel Name: municipio2 WorksheetPosition: Excel.WorksheetPosition.Last
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: planilha2 Column: $'''a''' Row: 2
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''statusObra''' Column: $'''a''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''estabelecimento''' Column: $'''b''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''tipo''' Column: $'''c''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''programa''' Column: $'''d''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''cidadeEstado''' Column: $'''e''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''bairro''' Column: $'''f''' Row: 1
+    Excel.ResizeColumnsOrRows.AutofitAllColumns Instance: ArquivoExcel
+    Excel.AddWorksheet Instance: ArquivoExcel Name: municipio3 WorksheetPosition: Excel.WorksheetPosition.Last
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: planilha3 Column: $'''a''' Row: 2
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''statusObra''' Column: $'''a''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''estabelecimento''' Column: $'''b''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''tipo''' Column: $'''c''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''programa''' Column: $'''d''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''cidadeEstado''' Column: $'''e''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''bairro''' Column: $'''f''' Row: 1
+    Excel.ResizeColumnsOrRows.AutofitAllColumns Instance: ArquivoExcel
+    Excel.AddWorksheet Instance: ArquivoExcel Name: municipio4 WorksheetPosition: Excel.WorksheetPosition.Last
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: planilha4 Column: $'''a''' Row: 2
+    Excel.ResizeColumnsOrRows.AutofitAllColumns Instance: ArquivoExcel
+    Excel.AddWorksheet Instance: ArquivoExcel Name: municipio5 WorksheetPosition: Excel.WorksheetPosition.Last
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''statusObra''' Column: $'''a''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''estabelecimento''' Column: $'''b''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''tipo''' Column: $'''c''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''programa''' Column: $'''d''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''cidadeEstado''' Column: $'''e''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: $'''bairro''' Column: $'''f''' Row: 1
+    Excel.WriteToExcel.WriteCell Instance: ArquivoExcel Value: planilha5 Column: $'''a''' Row: 2
+    Excel.ResizeColumnsOrRows.AutofitAllColumns Instance: ArquivoExcel
+END FUNCTION

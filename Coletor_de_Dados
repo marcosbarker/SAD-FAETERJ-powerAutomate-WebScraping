@@ -1,0 +1,8 @@
+
+FUNCTION Coletor_de_Dados GLOBAL
+    CALL Primeiro_Municipio
+    CALL Segundo_Municipio
+    CALL Terceiro_Municipio
+    CALL Quarto_Municipio
+    CALL Quinto_Municipio
+END FUNCTION

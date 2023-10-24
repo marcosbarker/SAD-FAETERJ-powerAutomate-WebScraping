@@ -1,0 +1,8 @@
+
+FUNCTION Variaveis_Iniciais GLOBAL
+    DateTime.GetCurrentDateTime.Local DateTimeFormat: DateTime.DateTimeFormat.DateAndTime CurrentDateTime=> dataHoraColetaDados
+    Text.ConvertDateTimeToText.FromCustomDateTime DateTime: dataHoraColetaDados CustomFormat: $'''dd-MM-yyyy(hh-mm-ss)''' Result=> FormattedDateTime
+    Text.Replace Text: FormattedDateTime TextToFind: $''':''' IsRegEx: False IgnoreCase: False ReplaceWith: $'''-''' ActivateEscapeSequences: False Result=> Replaced
+    Text.Replace Text: Replaced TextToFind: $'''/''' IsRegEx: False IgnoreCase: False ReplaceWith: $'''-''' ActivateEscapeSequences: False Result=> dataColetaDosDadosFormatada
+    Folder.GetSpecialFolder SpecialFolder: Folder.SpecialFolder.DesktopDirectory SpecialFolderPath=> AreaDeTrabalho
+END FUNCTION
